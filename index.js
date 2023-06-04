@@ -20,7 +20,7 @@ client.on('ready', () => {
 const exampleEmbed = new EmbedBuilder()
 .setColor(0xe510db)
 .setTitle('Bot anti-blague "feur"')
-.setDescription("J'ai créé ce petit bot, pour mettre fin au règne de la terreur que nous impose la blague du 'quoi ?' -Feur \n aucune commande à display, il ne sert qu'à contrer une blague trop répandue");
+.setDescription("J'ai créé ce petit bot, pour mettre fin au règne de la terreur que nous impose la blague du 'quoi ?' -Feur \n aucune commande à display, il ne sert qu'à contrer une blague trop répandue \n (sauf le '&coffee' pcq faut pas déconner, le café c'est chouette");
 
 client.on("messageCreate", message => {
 
@@ -43,7 +43,7 @@ client.on("messageCreate", message => {
         break;
     
         case (message.content.toLowerCase()==="frere"):
-        message.reply("ça veut dire 'lunettes' en néerlandais");
+        message.reply("Jacques");
         break;
 
         case (message.content.toUpperCase()==="frère"):
@@ -57,5 +57,11 @@ client.on("messageCreate", message=>{
         message.channel.send({embeds: [exampleEmbed]});
     }
 })
+
+client.on("messageCreate", message=>{
+    if(message.content=== prefix+"coffee"){
+        message.channel.send(" ‎ ‎ ‎ ‎  (   (   \n  " +   " ‎ ‎ ‎ ‎ )   )\n  " + String("\.\\_\\_\\_\\_\\_\\_\\.\n") + "  |              |  ]\n" + "  \\            /\n" + "    \`-----'")
+    }
+});
 
 client.login(token);
